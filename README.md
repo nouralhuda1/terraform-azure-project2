@@ -1,102 +1,140 @@
-# terraform-azure-project2
-
-## Project Overview
-
-This project demonstrates Infrastructure as Code (IaC) using Terraform to deploy a containerized web application on Microsoft Azure using Azure Container Instances (ACI). The application is containerized using Docker and deployed using a CI/CD pipeline with GitHub Actions.
-
-The pipeline automates infrastructure provisioning and deployment to Azure.
+# Infrastructure as Code with Terraform and Azure ACI
 
 ---
 
-## Authors
+## 1. Author Information
 
-- Name: nour alhuda ahmed husayn, saja saleh ghazal
+- Names: [Nour alhuda ahmed husayn, saja saleh ghazal
 - Student IDs: 4983, 5173
+---
+
+## 2. Project Title and Description
+
+**Project Title:** Infrastructure as Code with Terraform and Azure Container Instances (ACI)
+
+This project demonstrates how to deploy a containerized web application using Docker, Terraform, and Azure Container Instances (ACI). The infrastructure is automated using Infrastructure as Code (IaC) and deployed through a CI/CD pipeline using GitHub Actions.
+
+The system builds a Docker image, pushes it to Docker Hub, and deploys it to Azure using Terraform.
 
 ---
 
-## Architecture
+3. attached
 
-Workflow:
-Docker → Docker Hub → GitHub Actions → Terraform → Azure (ACI) → Running Web App
+4. # Docker Image Build and Push Instructions
 
-Steps:
-- Application is containerized using Docker
-- Docker image is pushed to Docker Hub
-- GitHub Actions triggers Terraform pipeline
-- Terraform creates Azure Resource Group and Azure Container Instance
-- ACI pulls Docker image and runs the application
-
----
-
-## Docker
-
-Build image:
+### Step 1: Build Docker Image
 docker build -t ruerue11/project2-aci:latest .
 
-Run locally:
+---
+
+### Step 2: Run Container Locally
 docker run -p 80:80 ruerue11/project2-aci:latest
 
-Push to Docker Hub:
+---
+
+### Step 3: Login to Docker Hub
 docker login
+
+---
+
+### Step 4: Push Image to Docker Hub
 docker push ruerue11/project2-aci:latest
 
 ---
 
-## Terraform
+### Notes
+- The Docker image must be successfully pushed before running Terraform.
+- Ensure Docker Hub repository exists and you are logged in.
 
-Initialize:
+5. ## Terraform Setup Instructions
+
+### Step 1: Initialize Terraform
 terraform init
 
-Validate:
+---
+
+### Step 2: Validate Configuration
 terraform validate
 
-Plan:
+---
+
+### Step 3: Plan Infrastructure
 terraform plan
 
-Apply:
+---
+
+### Step 4: Apply Infrastructure
 terraform apply -auto-approve
 
 ---
 
-## Azure Resources
+## What Terraform Creates
 
-Terraform creates:
-- Resource Group
+- Azure Resource Group
 - Azure Container Instance (ACI)
-- Public IP / DNS for access
-- Running container from Docker Hub image
+- Public IP / DNS name for access
+- Container running Docker image from Docker Hub
 
 ---
 
-## CI/CD Pipeline (GitHub Actions)
+## Notes
 
-- On Pull Request:
-  Runs terraform plan
+- Ensure Azure credentials are configured in GitHub Secrets (AZURE_CREDENTIALS)
+- Terraform backend should be configured in Azure Storage (if required by project setup)
+- Always run `plan` before `apply` to verify changes
 
-- On push to main:
-  Requires manual approval
-  Runs terraform apply
+6. GitHub Actions Workflow Explanation
 
-Authentication uses:
-- GitHub Secret: AZURE_CREDENTIALS (Azure Service Principal JSON)
+The CI/CD pipeline automates deployment using GitHub Actions.
 
----
+Workflow Steps:
 
-## Outputs
+* On Pull Request:
+    * Runs terraform plan to preview infrastructure changes
+* On Push to main:
+    * Requires manual approval (production environment)
+    * Runs terraform apply to deploy infrastructure
 
-Terraform outputs:
-- Resource Group name
-- Container public FQDN
-- Container public IP
+Authentication:
 
----
+* Uses GitHub Secret: AZURE_CREDENTIALS
+* This secret contains Azure Service Principal credentials for authentication
 
-## Summary
+⸻
+7. 
+attached
+8. Step-by-Step Implementation
 
-This project includes:
-- Docker containerization
-- Terraform Infrastructure as Code
-- Azure Container Instance deployment
-- GitHub Actions CI/CD pipeline
-- Secure Azure authentication using Service Principal
+Step 1: Docker Setup
+
+* Create Dockerfile
+* Build and run container locally
+* Push image to Docker Hub
+
+Step 2: Terraform Setup
+
+* Define Azure provider
+* Create Resource Group
+* Create Azure Container Instance
+* Configure outputs
+
+Step 3: Backend Configuration
+
+* Configure Terraform backend using Azure Storage Account for state management
+
+Step 4: CI/CD Setup
+
+* Create GitHub Actions workflow file
+* Configure plan on PR
+* Configure apply on push
+* Add Azure credentials secret
+
+Step 5: Deployment
+
+* Push code to GitHub
+* Trigger workflow
+* Approve deployment (if required)
+* Verify Azure resources
+
+9. Repository Link
+https://github.com/nouralhuda1/terraform-azure-project2.git
