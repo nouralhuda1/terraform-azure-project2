@@ -101,8 +101,23 @@ Authentication:
 * This secret contains Azure Service Principal credentials for authentication
 
 ⸻
-7. 
-attached
+7. screenshots
+
+<img width="1512" height="982" alt="Screenshot 2026-06-14 at 10 43 57 PM" src="https://github.com/user-attachments/assets/a3018ed7-7e1a-4d31-a0dc-cde882a6f69a" />
+
+<img width="1512" height="982" alt="Screenshot 2026-06-14 at 10 59 49 PM" src="https://github.com/user-attachments/assets/501023d3-e7da-4ee8-8b1d-881ff184bc6d" />
+
+<img width="1512" height="982" alt="Screenshot 2026-06-14 at 11 50 09 PM" src="https://github.com/user-attachments/assets/a99b66b7-e125-4f66-823b-9bd3fcbf6fe7" />
+
+<img width="1512" height="982" alt="Screenshot 2026-06-14 at 11 51 57 PM" src="https://github.com/user-attachments/assets/49bc60e6-8be4-46dc-bbc8-ebf3a6065388" />
+
+<img width="1512" height="982" alt="Screenshot 2026-06-15 at 2 29 59 AM" src="https://github.com/user-attachments/assets/febdb62c-7b74-419d-9efc-f232caa214e6" />
+
+<img width="1512" height="982" alt="Screenshot 2026-06-15 at 12 05 24 AM" src="https://github.com/user-attachments/assets/dc669617-7163-4642-a8da-7ecf06d29d22" />
+
+<img width="1512" height="982" alt="Screenshot 2026-06-15 at 2 30 47 AM" src="https://github.com/user-attachments/assets/41e0f954-3e7f-42a9-8a11-9fa0e3d58c97" />
+
+
 8. Step-by-Step Implementation
 
 Step 1: Docker Setup
