@@ -152,6 +152,39 @@ Step 8.5: Push Docker Image to Docker Hub
    docker login
 docker push your-dockerhub-username/project2-aci:latest
 
+### Step 8.1: Create Project Repository
+
+```bash
+
+git clone <your-repo-url>
+
+cd terraform-azure-project2
+
+Step 8.2: Create Web Application
+
+Create app/index.html:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project 2 ACI</title>
+</head>
+<body>
+    <h1>Hello from Terraform + Azure ACI</h1>
+    <p>Deployed by: YOUR NAME</p>
+</body>
+</html>
+
+Step 8.3: Create Dockerfile
+FROM nginx:alpine
+COPY app/index.html /usr/share/nginx/html/index.html
+
+Step 8.4: Build Docker Image
+  docker build -t your-dockerhub-username/project2-aci:latest .
+
+Step 8.5: Push Docker Image to Docker Hub
+   docker login
+docker push your-dockerhub-username/project2-aci:latest
+
 Step 8.6: Configure Terraform Files
 
 Create required files:
@@ -221,7 +254,6 @@ Step 8.13: Final Verification
 * Web application is publicly accessible
 * Terraform state is correctly managed
 * CI/CD pipeline executed successfully
-
 
 9. Repository Link
 https://github.com/nouralhuda1/terraform-azure-project2.git
