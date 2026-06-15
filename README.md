@@ -119,37 +119,109 @@ Authentication:
 
 
 8. Step-by-Step Implementation
+### Step 8.1: Create Project Repository
 
-Step 1: Docker Setup
+```bash
 
-* Create Dockerfile
-* Build and run container locally
-* Push image to Docker Hub
+git clone <your-repo-url>
 
-Step 2: Terraform Setup
+cd terraform-azure-project2
 
-* Define Azure provider
-* Create Resource Group
-* Create Azure Container Instance
-* Configure outputs
+Step 8.2: Create Web Application
 
-Step 3: Backend Configuration
+Create app/index.html:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project 2 ACI</title>
+</head>
+<body>
+    <h1>Hello from Terraform + Azure ACI</h1>
+    <p>Deployed by: YOUR NAME</p>
+</body>
+</html>
 
-* Configure Terraform backend using Azure Storage Account for state management
+Step 8.3: Create Dockerfile
+FROM nginx:alpine
+COPY app/index.html /usr/share/nginx/html/index.html
 
-Step 4: CI/CD Setup
+Step 8.4: Build Docker Image
+  docker build -t your-dockerhub-username/project2-aci:latest .
 
-* Create GitHub Actions workflow file
-* Configure plan on PR
-* Configure apply on push
-* Add Azure credentials secret
+Step 8.5: Push Docker Image to Docker Hub
+   docker login
+docker push your-dockerhub-username/project2-aci:latest
 
-Step 5: Deployment
+Step 8.6: Configure Terraform Files
 
-* Push code to GitHub
-* Trigger workflow
-* Approve deployment (if required)
-* Verify Azure resources
+Create required files:
+
+* providers.tf
+* main.tf
+* variables.tf
+* outputs.tf
+* backend.tf
+
+These define:
+
+* Azure Resource Group
+* Azure Container Instance (ACI)
+* Docker image deployment
+* Outputs (IP, FQDN)
+
+Step 8.7: Initialize Terraform
+  terraform init -reconfigure
+
+Step 8.8: Deploy Infrastructure
+    terraform plan
+terraform apply -auto-approve
+
+Step 8.9: Verify Deployment
+    terraform output
+    Check Azure Portal:
+
+* Resource Group exists
+* Container Instance is running
+* Public IP or DNS is available
+
+Step 8.10: Test Application
+
+Open in browser:
+
+http://<ACI_PUBLIC_IP_OR_FQDN>
+
+Verify that the web page loads successfully.
+
+⸻
+
+Step 8.11: Configure GitHub Actions CI/CD
+
+Create .github/workflows/terraform.yml with:
+
+* Terraform Plan on Pull Request
+* Terraform Apply on Push to Main
+* Azure authentication using AZURE_CREDENTIALS secret
+
+Step 8.12: Trigger CI/CD Pipeline
+git add .
+git commit -m "final deployment setup"
+git push origin main
+
+Check GitHub Actions:
+
+* Terraform Plan runs successfully
+* Terraform Apply runs successfully (with approval if enabled)
+
+⸻
+
+Step 8.13: Final Verification
+
+* Azure Container Instance is running
+* Docker image is pulled from Docker Hub
+* Web application is publicly accessible
+* Terraform state is correctly managed
+* CI/CD pipeline executed successfully
+
 
 9. Repository Link
 https://github.com/nouralhuda1/terraform-azure-project2.git
