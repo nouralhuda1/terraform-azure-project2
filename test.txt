@@ -4,3 +4,4 @@ test
 test
 workflow test
 trigger pr
+trigger ci
