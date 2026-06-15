@@ -18,9 +18,11 @@ The system builds a Docker image, pushes it to Docker Hub, and deploys it to Azu
 
 ---
 
-3. attached
 
-4. # Docker Image Build and Push Instructions
+<img width="971" height="1280" alt="IMG_8862" src="https://github.com/user-attachments/assets/8c9d68c5-af75-48fe-a5e3-a976e0877818" />
+
+
+3. # Docker Image Build and Push Instructions
 
 ### Step 1: Build Docker Image
 docker build -t ruerue11/project2-aci:latest .
