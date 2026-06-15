@@ -113,9 +113,9 @@ Authentication:
 
 <img width="1512" height="982" alt="Screenshot 2026-06-15 at 2 29 59 AM" src="https://github.com/user-attachments/assets/febdb62c-7b74-419d-9efc-f232caa214e6" />
 
-<img width="1512" height="982" alt="Screenshot 2026-06-15 at 12 05 24 AM" src="https://github.com/user-attachments/assets/dc669617-7163-4642-a8da-7ecf06d29d22" />
+<img width="1512" height="982" alt="Screenshot 2026-06-15 at 9 11 28 AM" src="https://github.com/user-attachments/assets/3636352e-9984-401f-b744-68527ebc377c" />
 
-<img width="1512" height="982" alt="Screenshot 2026-06-15 at 2 30 47 AM" src="https://github.com/user-attachments/assets/41e0f954-3e7f-42a9-8a11-9fa0e3d58c97" />
+<img width="1512" height="982" alt="Screenshot 2026-06-15 at 8 26 58 AM" src="https://github.com/user-attachments/assets/19e34b3e-1c8f-40a8-9ee3-e0b91f6348b1" />
 
 
 8. Step-by-Step Implementation
