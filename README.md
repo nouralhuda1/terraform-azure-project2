@@ -17,12 +17,12 @@ This project demonstrates how to deploy a containerized web application using Do
 The system builds a Docker image, pushes it to Docker Hub, and deploys it to Azure using Terraform.
 
 ---
-
+ # 3. Architecture diagram 
 
 <img width="971" height="1280" alt="IMG_8862" src="https://github.com/user-attachments/assets/8c9d68c5-af75-48fe-a5e3-a976e0877818" />
 
 
-3. # Docker Image Build and Push Instructions
+ # 4.  Docker Image Build and Push Instructions
 
 ### Step 1: Build Docker Image
 docker build -t ruerue11/project2-aci:latest .
@@ -48,7 +48,7 @@ docker push ruerue11/project2-aci:latest
 - The Docker image must be successfully pushed before running Terraform.
 - Ensure Docker Hub repository exists and you are logged in.
 
-5. ## Terraform Setup Instructions
+# 5. Terraform Setup Instructions
 
 ### Step 1: Initialize Terraform
 terraform init
@@ -85,7 +85,7 @@ terraform apply -auto-approve
 - Terraform backend should be configured in Azure Storage (if required by project setup)
 - Always run `plan` before `apply` to verify changes
 
-6. GitHub Actions Workflow Explanation
+# 6. GitHub Actions Workflow Explanation
 
 The CI/CD pipeline automates deployment using GitHub Actions.
 
@@ -103,7 +103,7 @@ Authentication:
 * This secret contains Azure Service Principal credentials for authentication
 
 ⸻
-7. screenshots
+# 7. screenshots
 
 <img width="1512" height="982" alt="Screenshot 2026-06-14 at 10 43 57 PM" src="https://github.com/user-attachments/assets/a3018ed7-7e1a-4d31-a0dc-cde882a6f69a" />
 
@@ -120,7 +120,7 @@ Authentication:
 <img width="1512" height="982" alt="Screenshot 2026-06-15 at 8 26 58 AM" src="https://github.com/user-attachments/assets/19e34b3e-1c8f-40a8-9ee3-e0b91f6348b1" />
 
 
-8. Step-by-Step Implementation
+# 8. Step-by-Step Implementation
 ### Step 8.1: Create Project Repository
 
 ```bash
@@ -225,5 +225,5 @@ Step 8.13: Final Verification
 * CI/CD pipeline executed successfully
 
 
-9. Repository Link
+# 9. Repository Link
 https://github.com/nouralhuda1/terraform-azure-project2.git
